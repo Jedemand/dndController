@@ -11,6 +11,7 @@ public interface SpellService {
     Iterable<Spell> findByName(String name);
 
     Iterable<Spell> findAll();
+    Spell findById(Integer id);
     Spell saveSpell(Spell spell);
     Spell updateSpell(Spell spell);
     Spell patchSpell(Map<String, Object> updates, Integer id);

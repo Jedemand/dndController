@@ -10,5 +10,6 @@ public interface ComplexCharRepo extends CrudRepository<ComplexChar, Integer> {
 
     Iterable<ComplexChar> findAllByChallenge(Double challenge);
     Iterable<ComplexChar> findByNameIsLike(String name);
+    Optional<ComplexChar> findByActorId(Integer id);
 
 }

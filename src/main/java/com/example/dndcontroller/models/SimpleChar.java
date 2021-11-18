@@ -14,4 +14,6 @@ import javax.persistence.Entity;
 @NoArgsConstructor
 public class SimpleChar extends Actor{
 
+
+
 }

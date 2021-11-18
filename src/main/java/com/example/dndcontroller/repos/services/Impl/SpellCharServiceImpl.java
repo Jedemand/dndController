@@ -2,6 +2,7 @@ package com.example.dndcontroller.repos.services.Impl;
 
 import com.example.dndcontroller.Exceptions.ActorNotFoundException;
 import com.example.dndcontroller.Exceptions.FieldNotFoundException;
+import com.example.dndcontroller.Exceptions.SpellNotFoundException;
 import com.example.dndcontroller.models.SpellChar;
 import com.example.dndcontroller.repos.SpellCharRepo;
 import com.example.dndcontroller.repos.services.SpellCharService;
@@ -42,6 +43,12 @@ public class SpellCharServiceImpl implements SpellCharService {
     @Override
     public Iterable<SpellChar> findAll() {
         return spellCharRepo.findAll();
+    }
+
+    @Override
+    public SpellChar findById(Integer id) {
+        return spellCharRepo.findByActorId(id)
+                .orElseThrow(() -> new SpellNotFoundException(String.valueOf(id)));
     }
 
     @Override

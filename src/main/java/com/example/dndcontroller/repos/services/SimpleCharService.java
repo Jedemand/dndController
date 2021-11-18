@@ -12,6 +12,7 @@ public interface SimpleCharService {
     Iterable<SimpleChar> findAllByAlignment(String alignment);
 
     Iterable<SimpleChar> findAll();
+    SimpleChar findById(Integer id);
     SimpleChar saveSimpleChar(SimpleChar simplechar);
     SimpleChar updateSimpleChar(SimpleChar simplechar);
     SimpleChar patchSimpleChar(Map<String, Object> updates, Integer id);

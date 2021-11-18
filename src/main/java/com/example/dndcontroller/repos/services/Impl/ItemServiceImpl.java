@@ -36,6 +36,12 @@ public class ItemServiceImpl implements ItemService {
     }
 
     @Override
+    public Item findById(Integer id) {
+        return itemRepo.findById(id)
+                .orElseThrow(() -> new ItemNotFoundException(String.valueOf(id)));
+    }
+
+    @Override
     public Item saveItem(Item item) {
         return itemRepo.save(item);
     }

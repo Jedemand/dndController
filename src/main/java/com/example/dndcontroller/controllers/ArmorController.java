@@ -43,6 +43,11 @@ public class ArmorController {
         return armorService.findAllByArmorClass(armorClass);
     }
 
+    @GetMapping("/id")
+    public Armor findArmorById(@RequestParam Integer id){
+        return armorService.findById(id);
+    }
+
     @PostMapping("/")
     public ResponseEntity<Armor> saveArmor(@RequestBody Armor armor){
         return new ResponseEntity<>(armorService.saveArmor(armor),

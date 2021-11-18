@@ -44,6 +44,12 @@ public class ArmorServiceImpl implements ArmorService {
     }
 
     @Override
+    public Armor findById(Integer id) {
+        return armorRepo.findById(id)
+                .orElseThrow(() -> new ItemNotFoundException(String.valueOf(id)));
+    }
+
+    @Override
     public Armor saveArmor(Armor armor) {
         return armorRepo.save(armor);
     }

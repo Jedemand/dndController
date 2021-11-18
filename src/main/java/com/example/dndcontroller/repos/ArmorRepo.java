@@ -10,4 +10,5 @@ public interface ArmorRepo extends CrudRepository<Armor, Integer> {
     Iterable<Armor> findAllByCategory(String category);
     Iterable<Armor> findAllByArmorClass(String armorClass);
     Iterable<Armor> findAllByNameContains(String name);
+    Optional<Armor> findById(Integer id);
 }

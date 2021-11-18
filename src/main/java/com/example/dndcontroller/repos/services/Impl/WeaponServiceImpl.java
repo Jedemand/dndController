@@ -38,6 +38,12 @@ public class WeaponServiceImpl implements WeaponService {
     }
 
     @Override
+    public Weapon findById(Integer id) {
+        return weaponRepo.findById(id)
+                .orElseThrow(() -> new ItemNotFoundException(String.valueOf(id)));
+    }
+
+    @Override
     public Weapon saveWeapon(Weapon weapon) {
         return weaponRepo.save(weapon);
     }

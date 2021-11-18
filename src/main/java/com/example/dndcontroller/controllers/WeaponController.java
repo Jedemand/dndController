@@ -36,6 +36,11 @@ public class WeaponController {
         return weaponService.findByRarity(rarity);
     }
 
+    @GetMapping("/id")
+    public Weapon findById(@RequestParam Integer id){
+        return weaponService.findById(id);
+    }
+
     @PostMapping("/")
     public ResponseEntity<Weapon> saveWeapon(@RequestBody Weapon weapon){
         return new ResponseEntity<>(weaponService.saveWeapon(weapon),

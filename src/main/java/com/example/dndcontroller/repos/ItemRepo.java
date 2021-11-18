@@ -11,4 +11,5 @@ public interface ItemRepo extends CrudRepository<Item, Integer> {
 
     Iterable<Item> findAllByNameContains(String name);
     Iterable<Item> findAllByRarity(String rarity);
+    Optional<Item> findById(Integer id);
 }

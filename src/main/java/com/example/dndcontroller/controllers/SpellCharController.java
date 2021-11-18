@@ -45,6 +45,11 @@ public class SpellCharController {
         return spellCharService.findAll();
     }
 
+    @GetMapping ("/id")
+    public SpellChar findById(@RequestParam Integer id){
+        return spellCharService.findById(id);
+    }
+
     @PostMapping("/")
     public ResponseEntity<SpellChar> saveSpellChar(@RequestBody SpellChar spellChar){
         return new ResponseEntity<>(spellCharService.saveSpellChar(spellChar),

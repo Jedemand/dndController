@@ -9,6 +9,7 @@ public interface EncounterService {
 
 
     Iterable<Encounter> findByTitle(String title);
+    Encounter findById(Integer id);
     Iterable<Encounter> findAll();
     Encounter saveEncounter(Encounter encounter);
     Encounter updateEncounter(Encounter encounter);

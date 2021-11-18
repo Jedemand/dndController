@@ -45,6 +45,11 @@ public class SimpleCharController {
         return simpleCharService.findAll();
     }
 
+    @GetMapping("/id")
+    public SimpleChar findById(@RequestParam Integer id){
+        return simpleCharService.findById(id);
+    }
+
     @PostMapping("/")
     public ResponseEntity<SimpleChar> saveSimpleChar(@RequestBody SimpleChar simpleChar){
         return new ResponseEntity<>(simpleCharService.saveSimpleChar(simpleChar),

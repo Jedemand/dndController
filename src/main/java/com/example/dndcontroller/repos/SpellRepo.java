@@ -7,7 +7,8 @@ import java.util.Optional;
 
 public interface SpellRepo extends CrudRepository<Spell, Integer> {
 
-   Iterable<Spell> findAllBySchool(String school);
+   Iterable<Spell> findAllBySchoolContains(String school);
    Iterable<Spell> findAllByLevel(Integer level);
    Iterable<Spell> findBySpellNameContains(String name);
+   Optional<Spell> findById(Integer id);
 }

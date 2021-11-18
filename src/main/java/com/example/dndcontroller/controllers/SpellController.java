@@ -42,6 +42,11 @@ public class SpellController {
         return spellService.findAllByLevel(level);
     }
 
+    @GetMapping("/id")
+    public Spell findSpellId(@RequestParam Integer id){
+        return spellService.findById(id);
+    }
+
     @PostMapping("/")
     public ResponseEntity<Spell> addSpell(@RequestBody Spell spell){
         return new ResponseEntity<>(

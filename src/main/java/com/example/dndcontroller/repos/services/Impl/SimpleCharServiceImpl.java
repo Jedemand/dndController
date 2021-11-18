@@ -45,6 +45,12 @@ public class SimpleCharServiceImpl implements SimpleCharService {
     }
 
     @Override
+    public SimpleChar findById(Integer id) {
+        return simpleCharRepo.findByActorId(id)
+                .orElseThrow(() -> new ActorNotFoundException(String.valueOf(id)));
+    }
+
+    @Override
     public SimpleChar saveSimpleChar(SimpleChar simplechar) {
         return simpleCharRepo.save(simplechar);
     }

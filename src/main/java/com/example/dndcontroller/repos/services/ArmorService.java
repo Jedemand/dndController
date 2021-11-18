@@ -11,6 +11,7 @@ public interface ArmorService {
     Iterable<Armor> findAllByArmorClass(String armorClass);
     Iterable<Armor> findAll();
     Iterable<Armor> findByName(String name);
+    Armor findById(Integer id);
     Armor saveArmor(Armor armor);
     Armor updateArmor(Armor armor);
     Armor patchArmor(Map<String, Object> updates, Integer id);

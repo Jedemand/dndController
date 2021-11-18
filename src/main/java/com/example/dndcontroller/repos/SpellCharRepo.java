@@ -11,5 +11,7 @@ public interface SpellCharRepo extends CrudRepository<SpellChar, Integer> {
     Iterable<SpellChar> findAllByRace(String race);
     Iterable<SpellChar> findAllByChallenge(Double challenge);
     Iterable<SpellChar> findAllByAlignmentContains(String alignment);
+    Optional<SpellChar> findByActorId(Integer id);
+
 
 }

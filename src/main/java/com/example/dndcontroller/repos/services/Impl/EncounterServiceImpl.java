@@ -25,12 +25,18 @@ public class EncounterServiceImpl implements EncounterService {
 
     @Override
     public Iterable<Encounter> findByTitle(String title) {
-        return encounterRepo.findByTitleIsLike(title);
+        return encounterRepo.findByTitleContains(title);
     }
 
     @Override
     public Iterable<Encounter> findAll() {
         return encounterRepo.findAll();
+    }
+
+    @Override
+    public Encounter findById(Integer id) {
+        return encounterRepo.findById(id)
+                .orElseThrow(() -> new ItemNotFoundException(String.valueOf(id)));
     }
 
     @Override

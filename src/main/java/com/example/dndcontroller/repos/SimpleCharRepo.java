@@ -11,5 +11,6 @@ public interface SimpleCharRepo extends CrudRepository<SimpleChar, Integer> {
     Iterable<SimpleChar> findAllByRace(String race);
     Iterable<SimpleChar> findAllByChallenge(Double challenge);
     Iterable<SimpleChar> findAllByAlignmentContains(String alignment);
+    Optional<SimpleChar> findByActorId(Integer id);
 
 }

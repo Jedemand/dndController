@@ -14,13 +14,7 @@ public class Encounter {
 
     String title;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    List<ComplexChar> mainCharacters;
-
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    List<SpellChar> spellMonsters;
-
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    List<SimpleChar> monsters;
+    @ElementCollection
+    List<String> encounterList;
 
 }

@@ -10,4 +10,5 @@ public interface WeaponRepo extends CrudRepository<Weapon, Integer> {
     Iterable<Weapon> findAllByDmgType(Integer integer);
     Iterable<Weapon> findAllByNameContains(String name);
     Iterable<Weapon> findByRarity(String rarity);
+    Optional<Weapon> findById(Integer id);
 }

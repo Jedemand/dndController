@@ -18,6 +18,8 @@ import java.util.List;
 @AllArgsConstructor
 public class SpellChar extends Actor{
 
+
+
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     List<Spell> spellBook;
 }

@@ -20,9 +20,16 @@ public class SpellServiceImpl implements SpellService {
         this.spellRepo = spellRepo;
     }
 
+
+    @Override
+    public Spell findById(Integer id) {
+        return spellRepo.findById(id)
+                .orElseThrow(() -> new SpellNotFoundException(String.valueOf(id)));
+    }
+
     @Override
     public Iterable<Spell> findAllBySchool(String school) {
-        return spellRepo.findAllBySchool(school);
+        return spellRepo.findAllBySchoolContains(school);
     }
 
     @Override

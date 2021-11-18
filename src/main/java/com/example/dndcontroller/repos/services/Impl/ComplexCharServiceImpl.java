@@ -28,7 +28,7 @@ public class ComplexCharServiceImpl implements ComplexCharService {
 
     @Override
     public ComplexChar findById(Integer id) {
-        return complexCharRepo.findById(id)
+        return complexCharRepo.findByActorId(id)
                 .orElseThrow(() -> new ActorNotFoundException(String.valueOf(id)));
     }
 

@@ -36,6 +36,11 @@ public class ItemController {
         return itemService.findByName(name);
     }
 
+    @GetMapping("/id")
+    public Item findById(@RequestParam Integer id){
+        return itemService.findById(id);
+    }
+
     @PostMapping("/")
     public ResponseEntity<Item> saveItem(@RequestBody Item item){
         return ResponseEntity.ok(itemService.saveItem(item));

@@ -23,6 +23,8 @@ public class Actor {
     Integer initiative;
     Integer armor;
     Integer health;
+    Integer minMod;
+    Integer maxMod;
     String speed;
     Double challenge;
     String size;

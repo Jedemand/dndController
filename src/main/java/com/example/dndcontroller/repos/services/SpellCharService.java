@@ -12,6 +12,7 @@ public interface SpellCharService {
     Iterable<SpellChar> findAllByAlignment(String alignment);
 
     Iterable<SpellChar> findAll();
+    SpellChar findById(Integer id);
     SpellChar saveSpellChar(SpellChar spellChar);
     SpellChar updateSpellChar(SpellChar spellChar);
     SpellChar patchSpellChar(Map<String, Object> updates, Integer id);
