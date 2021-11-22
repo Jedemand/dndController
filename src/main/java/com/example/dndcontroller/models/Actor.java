@@ -16,6 +16,7 @@ import java.util.Map;
 public class Actor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "actorId", unique = true, nullable = false)
     Integer actorId;
 
     String name;
@@ -23,7 +24,6 @@ public class Actor {
     Integer initiative;
     Integer armor;
     Integer health;
-    Integer minMod;
     Integer maxMod;
     String speed;
     Double challenge;

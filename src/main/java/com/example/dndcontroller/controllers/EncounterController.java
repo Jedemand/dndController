@@ -26,6 +26,16 @@ public class EncounterController {
         return ResponseEntity.ok(encounterService.findAll());
     }
 
+    @GetMapping("/id")
+    public Encounter getById(@RequestParam Integer id){
+        return encounterService.findById(id);
+    }
+
+    @GetMapping("/title")
+    public Encounter getOneTitle(@RequestParam String title){
+        return encounterService.findOneTitle(title);
+    }
+
     @GetMapping("/{title}")
     public Iterable<Encounter> getByTitle(@PathVariable String title){
         return encounterService.findByTitle(title);
@@ -48,7 +58,7 @@ public class EncounterController {
         );
     }
 
-    @PatchMapping("/{id")
+    @PatchMapping("/{id}")
     public ResponseEntity<?> partialUpdateCharacter(@RequestBody Map<String, Object> updates, @PathVariable Integer id){
         return new ResponseEntity<>(encounterService.patchEncounter(updates, id), HttpStatus.ACCEPTED);
     }

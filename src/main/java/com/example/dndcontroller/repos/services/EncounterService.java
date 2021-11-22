@@ -10,6 +10,7 @@ public interface EncounterService {
 
     Iterable<Encounter> findByTitle(String title);
     Encounter findById(Integer id);
+    Encounter findOneTitle(String Title);
     Iterable<Encounter> findAll();
     Encounter saveEncounter(Encounter encounter);
     Encounter updateEncounter(Encounter encounter);

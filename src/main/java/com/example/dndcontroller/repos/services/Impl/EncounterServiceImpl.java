@@ -40,6 +40,12 @@ public class EncounterServiceImpl implements EncounterService {
     }
 
     @Override
+    public Encounter findOneTitle(String title) {
+        return encounterRepo.findByTitle(title)
+                .orElseThrow(() -> new ItemNotFoundException(title));
+    }
+
+    @Override
     public Encounter saveEncounter(Encounter encounter) {
         return encounterRepo.save(encounter);
     }

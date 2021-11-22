@@ -9,4 +9,5 @@ public interface EncounterRepo extends CrudRepository<Encounter, Integer> {
 
     Iterable<Encounter> findByTitleContains(String title);
     Optional<Encounter> findById(Integer id);
+    Optional<Encounter> findByTitle(String title);
 }

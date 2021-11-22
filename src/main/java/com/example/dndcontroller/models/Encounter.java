@@ -14,7 +14,13 @@ public class Encounter {
 
     String title;
 
-    @ElementCollection
-    List<String> encounterList;
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
+    List<ComplexChar> characterList;
+
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
+    List<SimpleChar> mobList;
+
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
+    List<SpellChar> spellcasterList;
 
 }
